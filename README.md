@@ -1,1 +1,1 @@
-# Graffiti-Mint
+#Graffiti Mint
