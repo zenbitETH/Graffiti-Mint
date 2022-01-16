@@ -1,4 +1,7 @@
 import React from "react"
+import StackGrid from "react-stack-grid"
+
+
 
 class Lock extends React.Component {
   constructor(props) {
@@ -6,9 +9,10 @@ class Lock extends React.Component {
     this.unlockHandler = this.unlockHandler.bind(this)
     this.checkout = this.checkout.bind(this)
     this.state = {
-      locked: "pending" // there are 3 state: pending, locked and unlocked
+      locked: "locked" // there are 3 state: pending, locked and unlocked
     }
   }
+  
 
   /**
    * When the component mounts, listen to events from unlockProtocol
@@ -43,12 +47,11 @@ class Lock extends React.Component {
       }
     })
   }
-
   render() {
     const { locked } = this.state
     return (
-      <div className="App">
-        <header className="App-header">
+      <div>
+        
           {locked === "locked" && (
             <div onClick={this.checkout} style={{ cursor: "pointer" }}>
               Unlock me!{" "}
@@ -58,14 +61,12 @@ class Lock extends React.Component {
             </div>
           )}
           {locked === "unlocked" && (
-            <div>
-              Unlocked!{" "}
-              <span aria-label="unlocked" role="img">
-                🗝
-              </span>
-            </div>
+            <div style={{ maxWidth: 820, margin: "auto", marginTop: 32, paddingBottom: 256 }}>
+            <StackGrid columnWidth={200} gutterWidth={16} gutterHeight={16}>
+            {galleryList}
+            </StackGrid>
+          </div>
           )}
-        </header>
       </div>
     )
   }
