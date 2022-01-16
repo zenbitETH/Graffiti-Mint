@@ -27,10 +27,6 @@ Set your Metamask or other wallet to Rinkeby to mint!
 
 ---
 
-## Demo
-
-Check out the [demo]()!
-
 ## License
 
 [MIT](https://choosealicense.com/licenses/mit/)
