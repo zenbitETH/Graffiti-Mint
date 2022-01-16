@@ -12,45 +12,24 @@ IPFS pinning via [Pinata](https://www.pinata.cloud/)
 
 ## Installation
 
-```bash
-git clone https://github.com/zenbitETH/Graffiti-Mint
-
-cd Graffiti-Mint
-
-git checkout buyer-mints-nft
-
-yarn
-```
-
-> upload the default art to IPFS:
+From root:
 
 ```bash
-
+yarn install
 yarn upload
-
-```
-
-> install and start your 👷‍ Hardhat chain in another terminal:
-
-```bash
-cd buyer-mints-nft
-
-yarn chain
-```
-
-> in a third terminal window, deploy all the things and start your 📱 frontend:
-
-```bash
-cd buyer-mints-nft
-
 yarn deploy
-
 yarn start
 ```
 
 📱 Open http://localhost:3000 to see the app
 
+Set your Metamask or other wallet to Rinkeby to mint!
+
 ---
+
+## Demo
+
+Check out the [demo]()!
 
 ## License
 
