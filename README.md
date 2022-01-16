@@ -10,6 +10,11 @@ Frontend was built off of [scaffold-eth](https://github.com/scaffold-eth/scaffol
 
 IPFS pinning via [Pinata](https://www.pinata.cloud/)
 
+## NFThack 2022 Contracts
+[🧪 Rinkenby testnet 🧪](https://rinkeby.etherscan.io/address/0xb21ce070d62a2a98cfcf1d105b70e37c3feacd5e)
+
+[🌌 Polygon Mainnet 🌌](https://polygonscan.com/tx/0xd7ffe03f0e85ad748400bd8be03338548fa30822c0b6771727906f8394dcd87b)
+
 ## Installation
 
 From root:
