@@ -4,6 +4,7 @@ import { ThemeSwitcherProvider } from "react-css-theme-switcher";
 import ReactDOM from "react-dom";
 import App from "./App";
 import "./index.css";
+import * as serviceWorker from './serviceWorker';
 
 const themes = {
   dark: `${process.env.PUBLIC_URL}/dark-theme.css`,
@@ -27,3 +28,5 @@ ReactDOM.render(
   </ApolloProvider>,
   document.getElementById("root"),
 );
+
+serviceWorker.unregister();

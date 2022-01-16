@@ -10,6 +10,7 @@ import ReactJson from "react-json-view";
 import { BrowserRouter, Link, Route, Switch } from "react-router-dom";
 import StackGrid from "react-stack-grid";
 import Web3Modal from "web3modal";
+import Lock from "./Lock";
 import "./App.css";
 import assets from "./assets.js";
 import { Account, Address, AddressInput, Contract, Faucet, GasGauge, Header, Ramp, ThemeSwitch } from "./components";
@@ -207,6 +208,8 @@ const web3Modal = new Web3Modal({
     },
   },
 });
+
+
 
 function App(props) {
   const mainnetProvider =
@@ -528,6 +531,7 @@ function App(props) {
     );
   }
 
+  
   const [yourJSON, setYourJSON] = useState(STARTING_JSON);
   const [sending, setSending] = useState();
   const [ipfsHash, setIpfsHash] = useState();
@@ -689,6 +693,7 @@ function App(props) {
 
         <Switch>
           <Route exact path="/">
+            <Lock>
             {/*
                 🎛 this scaffolding is full of commonly used components
                 this <Contract/> component will automatically parse your ABI
@@ -700,6 +705,7 @@ function App(props) {
                 {galleryList}
               </StackGrid>
             </div>
+            </Lock>
           </Route>
 
           <Route path="/yourcollectibles">
