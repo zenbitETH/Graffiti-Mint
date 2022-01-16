@@ -25,7 +25,7 @@ const { isAddress, getAddress, formatUnits, parseUnits } = utils;
 //
 // Select the network you want to deploy to here:
 //
-const defaultNetwork = "rinkeby";
+const defaultNetwork = "polygon";
 
 const mainnetGwei = 21;
 
@@ -33,7 +33,7 @@ function mnemonic() {
   try {
     return fs.readFileSync("./mnemonic.txt").toString().trim();
   } catch (e) {
-    if (defaultNetwork !== "rinkeby") {
+    if (defaultNetwork !== "polygon") {
       console.log(
         "☢️ WARNING: No mnemonic file created for a deploy account. Try `yarn run generate` and then `yarn run account`."
       );
@@ -63,10 +63,16 @@ module.exports = {
     //  */
     //},
 
-    rinkeby: {
-      url: `https://rinkeby.infura.io/v3/${process.env.RINKEBY_INFURA_KEY}`,
-      accounts: [`${process.env.RINKEBY_DEPLOYER_PRIV_KEY}`],
+    polygon: {
+      url: "https://speedy-nodes-nyc.moralis.io/729deaf43e7375d77367370e/polygon/mainnet",// <---- YOUR MORALIS ID! (not limited to infura)
+      gasPrice: 1000000000,
+      accounts: [`${process.env.POLYGON_DEPLOYER_PRIV_KEY}`],
     },
+    
+    //rinkeby: {
+    //  url: `https://rinkeby.infura.io/v3/${process.env.RINKEBY_INFURA_KEY}`,
+    //  accounts: [`${process.env.RINKEBY_DEPLOYER_PRIV_KEY}`],
+    //},
     // kovan: {
     //   url: `https://rinkeby.infura.io/v3/${process.env.KOVAN_INFURA_KEY}`,
     //   accounts: [`${process.env.KOVAN_DEPLOYER_PRIV_KEY}`],
@@ -142,13 +148,7 @@ module.exports = {
         mnemonic: mnemonic(),
       },
     },
-    polygon: {
-      url: "https://speedy-nodes-nyc.moralis.io/XXXXXXXXXXXXXXXXXXXx/polygon/mainnet",// <---- YOUR MORALIS ID! (not limited to infura)
-      gasPrice: 1000000000,
-      accounts: {
-        mnemonic: mnemonic(),
-      },
-    },
+   
     polytest: {
       url: "https://speedy-nodes-nyc.moralis.io/XXXXXXXXXXXXXXXXXXXXXXX/polygon/mumbai",// <---- YOUR MORALIS ID! (not limited to infura)
       gasPrice: 1000000000,
