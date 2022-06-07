@@ -1,20 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Lexend+Deca&display=swap');
-
 .App {
   text-align: center;
-  background-image: linear-gradient(to top, #141e30 40%, #01304E 75%);
-  background-size: 200% 200%;
-  height: 100vh;
-  font-family: "Lexend Deca"
-}
-
-.project {
-  font-size: 1em;
-}
-
-.lockedbutton {
-  font-size: 2em !important;
-  border: azure;
-  border-width: 1em;
-  box-shadow: azure;
 }

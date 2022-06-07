@@ -22,31 +22,6 @@
       Learn how to configure a non-root public URL by running `npm run build`.
     -->
     <title>Ethereum App</title>
-        <!-- Unlock snippet -->
-        <script> (function (d, s) {
-          var js = d.createElement(s),
-            sc = d.getElementsByTagName(s)[0];
-          js.src = "https://paywall.unlock-protocol.com/static/unlock.1.0.min.js";
-          sc.parentNode.insertBefore(js, sc);
-        }(document, "script"));
-      </script>
-  
-      <!-- Unlock Configuration -->
-      <script>
-        var unlockProtocolConfig = {
-          network: 4,
-          locks: {
-            '0xb6d8a1148beEbD394bDd308ed810e47a0d379427': {
-              name: 'Graffiti Mint Season Pass',
-            },
-          },
-          icon: 'https://unlock-protocol.com/static/images/svg/unlock-word-mark.svg',
-          callToAction: {
-            default:
-              'Get the Season Pass to mint Graffiti!',
-          },
-        }
-      </script>
   </head>
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
