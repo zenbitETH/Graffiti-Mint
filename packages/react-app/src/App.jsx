@@ -601,7 +601,7 @@ function App(props) {
     3: {
       description: "The sleeping dragon now is awake and loud. Painted by Fausto @Expo Arte Urbano 2016 in Santa Mónica 2 neighborhood.",
       external_url: "https://zenbit.mx", // <-- this can link to a page for the specific file too
-      image: "https://bafybeifidd4bvvq52nnndn62abg6z6orbsbsdk7zjog5bq6auzlowyoozm.ipfs.nftstorage.link/answer.png",
+      image: "https://bafybeifidd4bvvq52nnndn62abg6z6orbsbsdk7zjog5bq6auzlowyoozm.ipfs.nftstorage.link/dragon.png",
       name: "Quetzalcoatl awakes",
       attributes: [
         {
@@ -967,7 +967,7 @@ function App(props) {
         </Menu>
         <Switch>
           <Route exact path="/">
-            <div style={{ width: 640, margin: "auto", marginTop: 32, paddingBottom: 32 }}>
+            <div style={{ width: 1000, margin: "auto", marginTop: 32, paddingBottom: 32 }}>
               <Button
                 disabled={minting}
                 shape="round"
@@ -979,35 +979,38 @@ function App(props) {
                 MINT NFT
               </Button>
             </div>
-            <div style={{ width: 640, margin: "auto", marginTop: 32, paddingBottom: 32 }}>
+            <div style={{ width: 1000, margin: "auto"}}>
               <List
-                bordered
+                
                 dataSource={graffitiMints}
                 renderItem={item => {
                   const id = item.id.toNumber();
                   return (
                     <List.Item key={id + "_" + item.uri + "_" + item.owner}>
+                      
                       <Card
+                        style={{ border:"none" }}
                         title={
+                          <div >
+                            <span class="nftitle" >#{id} {item.name}</span> 
                           <div>
-                            <span style={{ fontSize: 16, marginRight: 8 }}>#{id}</span> {item.name}
+                              owner:{" "}
+                            <Address
+                              address={item.owner}
+                              ensProvider={mainnetProvider}
+                              blockExplorer={blockExplorer}
+                              fontSize={16}
+                            />
+                        </div>
                           </div>
                         }
                       >
                         <div>
-                          <img src={item.image} style={{ maxWidth: 150 }} />
+                          <img src={item.image} style={{ maxWidth: 300  }} />
                         </div>
                         <div>{item.description}</div>
-                      </Card>
-
-                      <div>
-                        owner:{" "}
-                        <Address
-                          address={item.owner}
-                          ensProvider={mainnetProvider}
-                          blockExplorer={blockExplorer}
-                          fontSize={16}
-                        />
+                        <div>
+                        
                         <AddressInput
                           ensProvider={mainnetProvider}
                           placeholder="transfer to address"
@@ -1027,6 +1030,8 @@ function App(props) {
                           Transfer
                         </Button>
                       </div>
+                      </Card>
+                      
                     </List.Item>
                   );
                 }}
@@ -1037,7 +1042,6 @@ function App(props) {
           <Route path="/transfers">
             <div style={{ width: 600, margin: "auto", marginTop: 32, paddingBottom: 32 }}>
               <List
-                bordered
                 dataSource={transferEvents}
                 renderItem={item => {
                   return (
