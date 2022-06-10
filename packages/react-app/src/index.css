@@ -1,5 +1,8 @@
 body {
   margin: 0;
+  background-image: linear-gradient(to top, #000000 40%, #202020 85%);
+  background-size: 200% 200%;
+  overflow: auto;
 }
 
 code {
