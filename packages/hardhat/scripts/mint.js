@@ -126,7 +126,7 @@ const main = async () => {
   const quetzalcoatl = {
     description: "The sleeping dragon now is awake and loud. Painted by Fausto @Expo Arte Urbano 2016 in Santa Mónica 2 neighborhood.",
       external_url: "https://zenbit.mx", // <-- this can link to a page for the specific file too
-      image: "https://bafybeifidd4bvvq52nnndn62abg6z6orbsbsdk7zjog5bq6auzlowyoozm.ipfs.nftstorage.link/answer.png",
+      image: "https://bafybeifidd4bvvq52nnndn62abg6z6orbsbsdk7zjog5bq6auzlowyoozm.ipfs.nftstorage.link/dragon.png",
       name: "Quetzalcoatl awakes",
       attributes: [
         {
