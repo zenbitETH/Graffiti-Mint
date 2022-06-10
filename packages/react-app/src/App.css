@@ -2,16 +2,29 @@
 
 .App {
   text-align: center;
-  background-color: transparent;
+
   overflow: auto;
 }
 
 
 .nftitle {
   font-size: 2em;
+  font-family: 'Permanent Marker';
   border: none;
+  color: #70FF00;
 }
 
+.owner {
+  font-family: 'Lexend';
+  font-size: 0.6em;
+  color: white;
+}
+
+.GMGM {
+  border-radius: 25px;
+  margin: 1em;
+  z-index: -10;
+}
 .graffitiList {
   text-align: center;
   ;
@@ -20,6 +33,8 @@
 .descri {
 word-wrap: break-word;
 font-size: 1.2em;
+font-family: 'Lexend';
+text-align: justify;
 }
 
 .navi {
@@ -28,13 +43,12 @@ font-size: 1.2em;
   text-align: left;
   overflow: hidden;
   width: 100%;
-  z-index: 0;
   font-size: clamp(1.2em, -1.2em + 2vw, 2.35rem);
 }
 
 
 .navs {
-  position: absolute;
+  position: fixed;
   bottom: 0;
   left: 0;
   right: 0;
@@ -42,8 +56,9 @@ font-size: 1.2em;
   grid-template-columns: 1fr 1fr;
   font-size: 2em;
   font-family: 'Permanent Marker';
-  
 }
+
+
 
 .allGM {
   background-color: #ffffff19;
@@ -74,6 +89,7 @@ font-size: 1.2em;
 .logo {
   max-width: 150px;
   padding: 1em;
+  z-index: 10;
 }
 
 .mintBT {
@@ -91,17 +107,14 @@ font-size: 1.2em;
   color: black;
 }
 
-.List {
-  white-space: nowrap;
-  overflow-x: auto;
-}
-
-.List.Item {
-  display: inline;
-}
 
 .graffitis {
   margin-bottom: 5em;
+  background-color: #ffffff19;
+  border-radius: 0 0 25px 25px;
+  margin-left: 1em;
+  margin-right: 1em;
+  padding: 2em;
 }
 
 .emptyBG {
@@ -133,8 +146,12 @@ font-size: 1.2em;
 .capBT {
   margin: 10em auto 0em auto;
   padding: 1em 1em 0 1em;
-  max-width: 500px;
+  max-width: 600px;
+}
 
+.conLS {
+  margin: 10em auto 0em auto;
+  max-width: 600px;
 }
 
 .walletBT {
@@ -159,8 +176,7 @@ font-size: 1.2em;
 }
 
 .network {
-  z-index: -1;
-  position: absolute; 
+  position: fixed; 
   left: 45px;
   top: 5px;
   color: gray;
@@ -190,11 +206,15 @@ font-size: 1.2em;
 
   .capBT {
     margin: 2em auto 0em auto;
-    max-width: 500px;
+    max-width: 700px;
+  }
+
+  .conLS {
+    margin: 10em auto 0em auto;
+    max-width: 700px;
   }
 
   .emptyBG {
-    min-height: 650px;
-    
+    min-height: 650px;   
   }
 }

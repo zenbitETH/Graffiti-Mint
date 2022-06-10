@@ -141,7 +141,7 @@ const walletLinkProvider = walletLink.makeWeb3Provider(`https://mainnet.infura.i
 const web3Modal = new Web3Modal({
   network: "mainnet", // Optional. If using WalletConnect on xDai, change network to "xdai" and add RPC info below for xDai chain.
   cacheProvider: true, // optional
-  theme: "light", // optional. Change to "dark" for a dark theme.
+  theme: "dark", // optional. Change to "dark" for a dark theme.
   providerOptions: {
     walletconnect: {
       package: WalletConnectProvider, // required
@@ -984,21 +984,21 @@ function App(props) {
                 <div>Mint NFT</div>
               </div>
             </div>
-            <div style={{ width: 500, margin: "auto"}}>
+            <div class="conLS" style={{margin: "auto"}}>
               <List
                 locale={locale}
                 
-                itemLayout="horizontal"
+              
                 dataSource={graffitiMints}
                 renderItem={item => {
                   const id = item.id.toNumber();
                   return (
-                    <List.Item class="List.Item" key={id + "_" + item.uri + "_" + item.owner}>
+                    <List.Item key={id + "_" + item.uri + "_" + item.owner}>
                       
                       <div class="graffitis">
-                          <div >
+                          <div class="nftitle" >
                             <span >#{id} {item.name}</span> 
-                          <div>
+                          <div class="owner">
                               owner:{" "}
                             <Address
                               address={item.owner}
@@ -1011,7 +1011,7 @@ function App(props) {
                         
                       
                         <div>
-                          <img src={item.image} style={{ maxWidth: 300  }} />
+                          <img class="GMGM" src={item.image} style={{ maxWidth: 350  }} />
                         </div>
                         <div class="descri">{item.description}</div>
                         <div>
@@ -1148,9 +1148,10 @@ function App(props) {
         </Switch>
       </BrowserRouter>
 
-      <ThemeSwitch />
+      
 
-      {/* 👨‍💼 Your account is in the top right with a wallet at connect options */}
+      {/*
+      <ThemeSwitch /> 👨‍💼 Your account is in the top right with a wallet at connect options */}
       <div style={{ position: "fixed", textAlign: "right", right: 0, top: 0, padding: 10 }}>
         <Account
           address={address}
