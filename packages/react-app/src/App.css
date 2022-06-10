@@ -1,8 +1,200 @@
+@import url('https://fonts.googleapis.com/css2?family=Lexend:wght@200;300;400;700;900&family=Permanent+Marker&display=swap');
+
 .App {
   text-align: center;
+  background-color: transparent;
+  overflow: auto;
 }
 
 
 .nftitle {
   font-size: 2em;
+  border: none;
+}
+
+.graffitiList {
+  text-align: center;
+  ;
+}
+
+.descri {
+word-wrap: break-word;
+font-size: 1.2em;
+}
+
+.navi {
+  position: fixed;
+  top: 0;
+  text-align: left;
+  overflow: hidden;
+  width: 100%;
+  z-index: 0;
+  font-size: clamp(1.2em, -1.2em + 2vw, 2.35rem);
+}
+
+
+.navs {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  font-size: 2em;
+  font-family: 'Permanent Marker';
+  
+}
+
+.allGM {
+  background-color: #ffffff19;
+  padding: 1em;
+  border-radius: 25px 0px 0px 0;
+  color: #70FF0099;
+  padding-top: 1.5em;
+}
+
+.allGM2 {
+  background-color: #ffffff19;
+  padding: 1em;
+  border-radius: 0 25px 0px 0;
+  color: #70FF0099;
+  padding-top: 1.5em;
+}
+
+.allGM:hover,.allGM2:hover {
+  background-color: #70FF0080;
+  cursor: pointer;
+  color: white;
+}
+
+.emoji {
+  font-size: 8em;
+}
+
+.logo {
+  max-width: 150px;
+  padding: 1em;
+}
+
+.mintBT {
+  border-radius: 100px 100px 0 0;
+  padding: 1em 0em 1em 0;
+  background: #ffffff19;
+  color: #fff;
+  font-size: 2em;
+  font-family: 'Permanent Marker', cursive;
+}
+
+.mintBT:hover {
+  background-color: #70FF0080;
+  cursor: pointer;
+  color: black;
+}
+
+.List {
+  white-space: nowrap;
+  overflow-x: auto;
+}
+
+.List.Item {
+  display: inline;
+}
+
+.graffitis {
+  margin-bottom: 5em;
+}
+
+.emptyBG {
+  background-color: #ffffff19;
+  margin: 0 0em 0 0em;
+  border-radius: 0 0 25px 25px;
+  min-height: 850px;
+  padding-top: 2em;
+  font-family: 'Lexend';
+  color: red;
+  font-size: 2em;
+}
+
+.GM {
+  color: #70FF00;
+  font-size: 2em;
+  font-family: 'Permanent Marker', cursive;
+}
+
+.whites {
+  color:white
+}
+
+.press {
+  color: #fff;
+  font-family: 'Permanent Marker', cursive;
+}
+
+.capBT {
+  margin: 10em auto 0em auto;
+  padding: 1em 1em 0 1em;
+  max-width: 500px;
+
+}
+
+.walletBT {
+  background-color: #ffffff19;
+  text-align: center;
+  font-family: 'Permanent Marker', cursive;
+  font-size: 2em;
+  padding: 0.5em;
+  margin-top: -0.5em;
+  border-radius: 0 0 25px 25px;
+  color:#70FF00;
+}
+
+.walletBT:hover {
+  background-color: #70FF0080;
+  color:#fff;
+  cursor: pointer;
+}
+
+.con {
+  margin-bottom: 0.5em;
+}
+
+.network {
+  z-index: -1;
+  position: absolute; 
+  left: 45px;
+  top: 5px;
+  color: gray;
+  font-family: 'Permanent Marker', cursive;
+}
+
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+  .navs {  
+    right: auto;
+    top: 10em;
+    display: grid;
+    grid-template-columns: 1fr;
+    height: 150px;
+    font-size: 1.2em;
+    font-family: 'Permanent Marker';
+  }
+
+  .allGM {
+    border-radius: 0 25px 0px 0;
+  }
+  
+  .allGM2 {
+    border-radius: 0 0px 25px 0;
+  }
+
+  .capBT {
+    margin: 2em auto 0em auto;
+    max-width: 500px;
+  }
+
+  .emptyBG {
+    min-height: 650px;
+    
+  }
 }

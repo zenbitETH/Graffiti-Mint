@@ -27,6 +27,8 @@ import { Account, Address, AddressInput, Contract, Faucet, GasGauge, Header, Ram
 import { INFURA_ID, NETWORK, NETWORKS } from "./constants";
 import { Transactor } from "./helpers";
 import { useContractConfig } from "./hooks";
+import logo from "./assets/Graffitilogo.svg"
+import GM from "./assets/GM.svg"
 // import Hints from "./Hints";
 
 const { BufferList } = require("bl");
@@ -438,7 +440,7 @@ function App(props) {
     }
   } else {
     networkDisplay = (
-      <div style={{ zIndex: -1, position: "absolute", right: 154, top: 28, padding: 16, color: targetNetwork.color }}>
+      <div class="network">
         {targetNetwork.name}
       </div>
     );
@@ -907,25 +909,28 @@ function App(props) {
     );
   };
 
+  let locale = {
+    emptyText: (
+    <div class="emptyBG">
+      <div class="emoji">🚨</div>
+      'Theres no Graffitis yet'<br/>
+      <div class="press">press Mint NFT</div>
+      
+    </div>)
+  };
+
   return (
     <div className="App">
       {/* ✏️ Edit the header and change the title to your project name */}
       <Header />
       {networkDisplay}
-      <BrowserRouter>
-        <Menu style={{ textAlign: "center" }} selectedKeys={[route]} mode="horizontal">
-          <Menu.Item key="/">
-            <Link
-              onClick={() => {
-                setRoute("/");
-              }}
-              to="/"
-            >
-              GraffitiMints
+      <BrowserRouter >
+        <div class="navs">
+            <Link class="allGM" onClick={() => { setRoute("/"); }} to="/">
+              Graffiti Mints
             </Link>
-          </Menu.Item>
-          <Menu.Item key="/transfers">
             <Link
+              class="allGM2"
               onClick={() => {
                 setRoute("/transfers");
               }}
@@ -933,8 +938,8 @@ function App(props) {
             >
               Transfers
             </Link>
-          </Menu.Item>
-          <Menu.Item key="/ipfsup">
+
+        {/*<Menu.Item key="/ipfsup">
             <Link
               onClick={() => {
                 setRoute("/ipfsup");
@@ -963,36 +968,36 @@ function App(props) {
             >
               Debug Contracts
             </Link>
-          </Menu.Item>
-        </Menu>
+            </Menu.Item>*/}
+        </div>
         <Switch>
           <Route exact path="/">
-            <div style={{ width: 1000, margin: "auto", marginTop: 32, paddingBottom: 32 }}>
-              <Button
+            <div class="capBT">
+              <div
                 disabled={minting}
-                shape="round"
-                size="large"
+                class="mintBT"
                 onClick={() => {
                   mintItem();
                 }}
               >
-                MINT NFT
-              </Button>
+                <img height="150px" src={GM} />
+                <div>Mint NFT</div>
+              </div>
             </div>
-            <div style={{ width: 1000, margin: "auto"}}>
+            <div style={{ width: 500, margin: "auto"}}>
               <List
+                locale={locale}
                 
+                itemLayout="horizontal"
                 dataSource={graffitiMints}
                 renderItem={item => {
                   const id = item.id.toNumber();
                   return (
-                    <List.Item key={id + "_" + item.uri + "_" + item.owner}>
+                    <List.Item class="List.Item" key={id + "_" + item.uri + "_" + item.owner}>
                       
-                      <Card
-                        style={{ border:"none" }}
-                        title={
+                      <div class="graffitis">
                           <div >
-                            <span class="nftitle" >#{id} {item.name}</span> 
+                            <span >#{id} {item.name}</span> 
                           <div>
                               owner:{" "}
                             <Address
@@ -1003,12 +1008,12 @@ function App(props) {
                             />
                         </div>
                           </div>
-                        }
-                      >
+                        
+                      
                         <div>
                           <img src={item.image} style={{ maxWidth: 300  }} />
                         </div>
-                        <div>{item.description}</div>
+                        <div class="descri">{item.description}</div>
                         <div>
                         
                         <AddressInput
@@ -1030,7 +1035,7 @@ function App(props) {
                           Transfer
                         </Button>
                       </div>
-                      </Card>
+                      </div>
                       
                     </List.Item>
                   );
@@ -1161,7 +1166,7 @@ function App(props) {
         {faucetHint}
       </div>
 
-      {/* 🗺 Extra UI like gas price, eth price, faucet, and support: */}
+      {/* 🗺 Extra UI like gas price, eth price, faucet, and support: 
       <div style={{ position: "fixed", textAlign: "left", left: 0, bottom: 20, padding: 10 }}>
         <Row align="middle" gutter={[4, 4]}>
           <Col span={8}>
@@ -1186,11 +1191,10 @@ function App(props) {
             </Button>
           </Col>
         </Row>
-
+_
         <Row align="middle" gutter={[4, 4]}>
           <Col span={24}>
             {
-              /*  if the local provider has a signer, let's show the faucet:  */
               faucetAvailable ? (
                 <Faucet localProvider={localProvider} price={price} ensProvider={mainnetProvider} />
               ) : (
@@ -1199,7 +1203,7 @@ function App(props) {
             }
           </Col>
         </Row>
-      </div>
+      </div>*/}
     </div>
   );
 }
