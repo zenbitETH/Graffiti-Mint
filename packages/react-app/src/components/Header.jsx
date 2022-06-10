@@ -5,8 +5,8 @@ import React from "react";
 
 export default function Header() {
   return (
-    <div class="navi">
-      <img class="logo" src={GM}/>
+    <div  class="navi">
+      <a href="/"><img class="logo" src={GM}/></a>
     </div>
   );
 }
