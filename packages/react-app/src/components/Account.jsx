@@ -55,28 +55,24 @@ export default function Account({
   if (web3Modal) {
     if (web3Modal.cachedProvider) {
       modalButtons.push(
-        <Button
+        <div
           key="logoutbutton"
-          style={{ verticalAlign: "top", marginLeft: 8, marginTop: 4 }}
-          shape="round"
-          size="large"
           onClick={logoutOfWeb3Modal}
+          class="walletBT"
         >
           logout
-        </Button>,
+        </div>,
       );
     } else {
       modalButtons.push(
-        <Button
-          key="loginbutton"
-          style={{ verticalAlign: "top", marginLeft: 8, marginTop: 4 }}
-          shape="round"
+        <div
+          class="walletBT"
           size="large"
           /* type={minimized ? "default" : "primary"}     too many people just defaulting to MM and having a bad time */
           onClick={loadWeb3Modal}
         >
-          connect
-        </Button>,
+          Connect
+        </div>,
       );
     }
   }
@@ -86,7 +82,7 @@ export default function Account({
   const display = minimized ? (
     ""
   ) : (
-    <span>
+    <span class="press">
       {address ? (
         <Address address={address} ensProvider={mainnetProvider} blockExplorer={blockExplorer} />
       ) : (
@@ -99,15 +95,15 @@ export default function Account({
         signer={userSigner}
         ensProvider={mainnetProvider}
         price={price}
-        color={currentTheme === "light" ? "#1890ff" : "#2caad9"}
+        color={currentTheme === "light" ? "#70ff00" : "#70ff00"}
       />
     </span>
   );
 
   return (
     <div>
+      <div class="con">{modalButtons}</div>
       {display}
-      {modalButtons}
     </div>
   );
 }

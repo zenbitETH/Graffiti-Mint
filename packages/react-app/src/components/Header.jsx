@@ -1,15 +1,12 @@
-import { PageHeader } from "antd";
+import GM from "../assets/GM.svg"
 import React from "react";
 
 // displays a page header
 
 export default function Header() {
   return (
-    <a  href="/App" target="_blank" rel="noopener noreferrer">
-      <PageHeader
-        title="🛹 Graffiti Mint"
-        style={{ cursor: "pointer" }}
-      />
-    </a>
+    <div  class="navi">
+      <a href="/"><img class="logo" src={GM}/></a>
+    </div>
   );
 }
