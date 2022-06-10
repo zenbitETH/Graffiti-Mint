@@ -17,7 +17,7 @@ contract GraffitiMint is
 
     Counters.Counter private _tokenIdCounter;
 
-    constructor() ERC721("GraffitiMint", "GFT") {}
+    constructor() ERC721("GraffitiMint", "GM") {}
 
     function _baseURI() internal pure override returns (string memory) {
         return "https://ipfs.io/ipfs/";
